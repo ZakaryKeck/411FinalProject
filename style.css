@@ -1,0 +1,113 @@
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+  display: block;
+}
+
+body {
+  text-align: center;
+  background-color: #d3d3d3; /* nice */
+  margin: 0;
+  font-weight: 600;
+}
+
+#header {
+  background-color: #666;
+  padding: 1px;
+  color: white;
+}
+
+#nav {
+  display: flex;
+  background-color: #797979;
+  overflow: hidden;
+}
+
+#nav a{
+  display: inline-block;
+  background-color: #797979;
+  color: white;
+  display: block;
+  line-height: 2em;
+  padding: 0.5em 5em 0.5em 5em;
+  text-decoration: none;
+}
+
+#nav a:hover {
+  background-color: #8a8a8a;
+}
+
+  
+#section {
+  display: flex;
+  flex-direction: row;
+}
+
+#sidebar {
+  border-style: solid;
+  min-width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+  justify-content: space-between;
+}
+
+#mainbar {
+  float: left;
+  padding: 20px;
+  width: 100%;
+  background-color: #f1f1f1;
+  
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin: 5px;
+}
+
+.selected {
+  justify-content: space-around;
+}
+
+.info {
+  width: 33%;
+  border-style: solid;
+  background: #666;
+}
+
+#results {
+  overflow: scroll;
+  overflow-x:hidden;
+  height: 165px;
+}
+
+.chart {
+  border-style: solid;
+  background: #d8d8d8;
+  width: 350px;
+  float: left;
+}
+
+.attributes {
+  display: flex;
+  align-items:flex-start;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+}

@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Final Project</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="data/attributes.js"></script>
+    <script type="text/javascript" src="data/emotions.js"></script>
+    <script type="text/javascript" src="scripts/query.js"></script>
+    <script type="text/javascript" src="scripts/radarGraph.js"></script>
+    <script type="text/javascript" src="scripts/wav_add.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1>
+            Music and Emotion
+        </h1>
+        
+    </header>
+
+    <div id="nav">
+        <a href="index.html">Query Graphs</a>
+        <a href="tsne.html">TSNE</a>
+    </div>
+
+    <div id="section">
+        <div id="sidebar">
+            <label>Attributes:</label>
+            <div class="sliders">
+                <div class="row">
+                    <input id="RegisterCheck" type="checkbox">
+                    <label>Register:</label>
+                    <input id="Register" type="range" min="1" max="7" value="3.5">
+                </div>
+                <div class="row">
+                    <input id="MelodyCheck" type="checkbox">
+                    <label>Melody:</label>
+                    <input id="Melody" type="range" min="1" max="7" value="3.5">
+                </div>
+                <div class="row">
+                    <input id="TimbreCheck" type="checkbox">
+                    <label>Timbre:</label>
+                    <input id="Timbre" type="range" min="1" max="7" value="3.5">
+                </div>
+                <div class="row">
+                    <input id="ArticulationCheck" type="checkbox">
+                    <label>Articulation:</label>
+                    <input id="Articulation" type="range" min="1" max="7" value="3.5">
+                </div>
+                <div class="row">
+                    <input id="SoundlevelCheck" type="checkbox">
+                    <label>Soundlevel:</label>
+                    <input id="Soundlevel" type="range" min="1" max="7" value="3.5">
+                </div>
+                <div class="row">
+                    <input id="TempoCheck" type="checkbox">
+                    <label>Tempo:</label>
+                    <input id="Tempo" type="range" min="1" max="7" value="3.5">
+                </div>
+                <div class="row">
+                    <input id="ModeCheck" type="checkbox">
+                    <label>Mode:</label>
+                    <input id="Mode" type="range" min="1" max="7" value="3.5">
+                </div>
+            </div>
+            <br>
+            <label>Emotions:</label>
+            <div class="sliders">
+                <div class="row">
+                    <input id="ScaryCheck" type="checkbox">
+                    <label>Scary:</label>
+                    <input id="Scary" type="range" min="1" max="7" value="3.5"></div>
+                <div class="row">
+                    <input id="HappyCheck" type="checkbox">
+                    <label>Happy:</label>
+                    <input id="Happy" type="range" min="1" max="7" value="3.5"></div>
+                <div class="row">
+                    <input id="SadCheck" type="checkbox">
+                    <label>Sad:</label>
+                    <input id="Sad" type="range" min="1" max="7" value="3.5"></div>
+                <div class="row">
+                    <input id="PeacefulCheck" type="checkbox">
+                    <label>Peaceful:</label>
+                    <input id="Peaceful" type="range" min="1" max="7" value="3.5"></div>
+            </div>
+            <div class="row">
+                <label>Range:</label>
+                <input id="Range" type="text" value="2">
+                <button type="submit" onclick="submitQuery()">Submit</button>
+            </div>
+        </div>
+
+        <div id="mainbar">
+            <div class="row">
+                <div id="attributeChart" class="chart">
+                    <script> makeGraph(attributes.length-1, "#attributeChart", attributes); </script>
+                </div>
+
+                <div id="emotionChart" class="chart">
+                    <script>makeGraph(emotions.length-1, "#emotionChart", emotions);</script>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="info">
+                    <h3>Resulting Wav Files</h3>
+                    <div id="results">
+                    </div>
+                </div>
+
+                <div class="info">
+                    <h3>Player</h3>
+                    <div id="wavs">
+                    </div>
+                </div>
+
+                <div class="info">
+                    <h3>Selected</h3>
+                    <div class="row selected">
+                        <div class="attributes">
+                            <label id="register"></label>
+                            <label id="mode"></label>
+                            <label id="tempo"></label>
+                            <label id="soundlevel"></label>
+                            <label id="articulation"></label>
+                            <label id="timbre"></label>
+                            <label id="melody"></label>
+                        </div>
+                        <div class="attributes">
+                            <label id="scary"></label>
+                            <label id="happy"></label>
+                            <label id="sad"></label>
+                            <label id="peaceful"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
